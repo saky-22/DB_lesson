@@ -1,5 +1,5 @@
 INSERT INTO reports (person_id, content) VALUES (7,'激辛ラーメン');
-INSERT INTO reports (person_id, content) VALUES (8,'焼き鳥');
+INSERT INTO reports (person_id, content) VALUES (8,'お酒');
 INSERT INTO reports (person_id, content) VALUES (9,'ストゼロ');
 INSERT INTO reports (person_id, content) VALUES (10,'納豆巻き');
 INSERT INTO reports (person_id, content) VALUES (11,'お寿司');

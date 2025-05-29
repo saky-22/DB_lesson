@@ -5,6 +5,6 @@ INSERT INTO people (name,email,department_id,age,gender) VALUES ('開発','kimur
 INSERT INTO people (name,email,department_id,age,gender) VALUES ('開発','imada@email.com',5,28,'女');
 INSERT INTO people (name,email,department_id,age,gender) VALUES ('開発','kasumi@email.com',6,30,'女');
 INSERT INTO people (name,email,department_id,age,gender) VALUES ('開発','kanna@email.com',7,25,'女');
-INSERT INTO people (name,email,department_id,age,gender) VALUES ('経理','sho@email.com',8,40,'男');
+INSERT INTO people (name,email,department_id,age,gender) VALUES ('経理','sho@email.com',8,41,'男');
 INSERT INTO people (name,email,department_id,age,gender) VALUES ('人事','jun@email.com',9,40,'女');
 INSERT INTO people (name,email,department_id,age,gender) VALUES ('情報システム','shota@email.com',10,31,'男');
