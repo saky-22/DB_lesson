@@ -1,20 +1,23 @@
-INSERT INTO reports (person_id, content) VALUES (7,'激辛ラーメン');
-INSERT INTO reports (person_id, content) VALUES (8,'お酒');
-INSERT INTO reports (person_id, content) VALUES (9,'ストゼロ');
-INSERT INTO reports (person_id, content) VALUES (10,'納豆巻き');
-INSERT INTO reports (person_id, content) VALUES (11,'お寿司');
-INSERT INTO reports (person_id, content) VALUES (12,'ペペロンチーノ');
-INSERT INTO reports (person_id, content) VALUES (13,'から揚げ');
-INSERT INTO reports (person_id, content) VALUES (14,'ビール');
-INSERT INTO reports (person_id, content) VALUES (15,'梅水晶');
-INSERT INTO reports (person_id, content) VALUES (16,'ペヤング');
+Q1
+CREATE TABLE departments(department_id INT unsigned NOT NULL auto_increment PRIMARY KEY,
+name VARCHAR(20)NOT NULL,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP);
 
+Q2
+ALTER TABLE people ADD (department_id INT unsigned NULL AFTER email);
+
+Q3
+INSERT INTO reports (person_id, content) VALUES (7,'激辛ラーメン'),(8,'お酒'),(9,'ストゼロ'),(10,'納豆巻き'),(11,'お寿司'),(12,'ペペロンチーノ'),(13,'から揚げ'),(14,'ビール'),(15,'梅水晶'),(16,'ペヤング');
+
+Q4
 UPDATE people SET email = 'suzuki@gizumo.jp' WHERE department_id = 1;
 UPDATE people SET email = 'tanaka@gizumo.jp' WHERE department_id = 2;
 UPDATE people SET email = 'fukuda@gizumo.jp' WHERE department_id = 3;
 UPDATE people SET email = 'toyoshima@gizumo.jp' WHERE department_id = 4;
 UPDATE people SET email = 'NULL' WHERE department_id = 5;
 
+Q5
 UPDATE people SET name = '板垣李光人' WHERE person_id = 7;
 UPDATE people SET name = '目黒蓮' WHERE person_id = 8;
 UPDATE people SET name = 'ラウール' WHERE person_id = 9;
@@ -30,6 +33,7 @@ VALUES ('吉沢亮', 1);
 
 SELECT name,gender FROM people;
 
+Q6
 SELECT
   `name`, `email`, `age`
 FROM
@@ -39,12 +43,18 @@ WHERE
 ORDER BY
   `created_at`;
 
-peopleテーブルから、部署IDが1の人の名前・メールアドレス・年齢を取得し、作成日順に並べてください。
+peopleテーブルから、部署IDというカラム名が1の人の名前・メールアドレス・年齢のレコードを取得し、作成日順に並べてください。
 
-SELECT name FROM people WHERE(gender = 'female' AND age BETWEEN 20 AND 29)OR(gender = 'male' AND age BETWEEN 40 AND 49);
+Q7
+SELECT name FROM people WHERE(gender = '女' AND age BETWEEN 20 AND 29)OR(gender = '男' AND age BETWEEN 40 AND 49);
 
+Q8
 SELECT name FROM people WHERE department_id = '1' ORDER BY age ASC;
-SELECT AVG(age) AS average_age FROM people WHERE department_id = '2'AND gender = 'female';
+
+Q9
+SELECT AVG(age) AS average_age FROM people WHERE department_id = '2'AND gender = '女';
+
+Q10
 SELECT people.name,departments.name,reports.content 
 FROM people
  INNER JOIN reports ON people.person_id = reports.person_id
@@ -53,6 +63,8 @@ SELECT name
  FROM people
  INNER JOIN reports ON people.person_id = reports.person_id 
  WHERE reports.content IS NULL;
+
+Q11
 SELECT name
 FROM people
 LEFT JOIN reports ON people.person_id = reports.person_id 
