@@ -46,13 +46,13 @@ ORDER BY
 peopleテーブルから、部署IDというカラム名が1の人の名前・メールアドレス・年齢のレコードを取得し、作成日順に並べてください。
 
 Q7
-SELECT name FROM people WHERE(gender = '女' AND age BETWEEN 20 AND 29)OR(gender = '男' AND age BETWEEN 40 AND 49);
+SELECT name FROM people WHERE(gender = 2 AND age BETWEEN 20 AND 29)OR(gender = 1 AND age BETWEEN 40 AND 49);
 
 Q8
 SELECT name FROM people WHERE department_id = '1' ORDER BY age ASC;
 
 Q9
-SELECT AVG(age) AS average_age FROM people WHERE department_id = '2'AND gender = '女';
+SELECT AVG(age) AS average_age FROM people WHERE department_id = '2'AND gender = 2;
 
 Q10
 SELECT people.name,departments.name,reports.content 
